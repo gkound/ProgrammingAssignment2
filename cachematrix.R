@@ -111,9 +111,9 @@ cacheSolve <- function(x, ...) {
 ##        X$set()<-B
 ## then calling cacheSolve should have returned the inverse from the cache.
 ## Instead, it calculates it from the beginning.
-## The code doesn't recognise that that the matrix to be inverted hasn't actually changed
+## The code doesn't recognise that the matrix to be inverted hasn't actually changed
 ##
-## The second pitfall is that if after defining a "special" matrix object X
+## The second pitfall is that after defining a "special" matrix object X
 ##          X<-makeCacheMatrix()
 ## we can set the contents of reverse matrix, even if we haven't even
 ## declare which is the matrix we want to invert.
@@ -122,5 +122,7 @@ cacheSolve <- function(x, ...) {
 ##          X$set(A)
 ## cacheSolve function doesn't calculate the correct result because
 ## the cache is already occupied with "garbage".
-## There should be a way to prevent the usage of X$setinverse()
+## In our example asking for the inverse of matrix A returns matrix A again.
+
+## If only there was a way to prevent the usage of X$setinverse()
 ## outside of cacheSolve function!
