@@ -22,7 +22,7 @@ makeCacheMatrix <- function(x = matrix()) {
   ## :set the value of the matrix
   set <- function(y) {
     x <<- y         ## assign the input matrix y to the variable x in the
-    ## parent environment (environment of makeCacheMatrix function)  
+                    ## parent environment (environment of makeCacheMatrix function)  
     m <<- NULL      ## re-initialize m in the parent environment to null
   }
   
